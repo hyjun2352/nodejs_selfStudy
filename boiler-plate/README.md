@@ -21,7 +21,28 @@
 - client request with Body the Json, buffer string and URL encoded data to server
 - Body 데이터를 분석(parse)해서 req.body로 출력해주는 것
 - Body-parser Dependency -> npm install body-parser --save
+- 하지만 express에 기본적으로 포함되어 body-parser 설치할 필요 없음
+```
+    app.use(bodyParser.urlencoded({extended: true}));
+    app.use(bodyParser.json()); 대신 아래 코드 사용
+    app.use(express.json());
+    app.use(express.urlencoded({extended: true}));
+
+  import / export 로 작성한 경우
+    module.exports = { User } 대신 아래 코드 사용
+    export default User;
+``` 
 - Client에서 Request를 줘야 하는데 Client가 없어서 POSTMAN을 이용한다.
 - POSTMAN 다운로드
 - Register Route 만들기
 - Node server실행해서 POSTMAN으로 Register Route에 요청을 보낸다.
+- *(mongoose 더 이상 콜백을 허용하지 않는다)
+
+## Nodemon 설치
+- node mon -> 소스를 변경할때 그걸 감지해서 자동으로 서버를 재 시작해주는 tool
+- node mon 다운로드 -> npm install nodemon --save-dev (npm i -D nodemon --save)
+- 시작할때 nodemon으로 시작 -> package.json script 하나 더 만들기
+
+## 비밀 설정 정보 관리
+- 환경 변수 process.env.NODE_ENV
+- local 환경 (development)& Deploy 배포 후(production)
