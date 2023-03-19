@@ -36,7 +36,7 @@
 - POSTMAN 다운로드
 - Register Route 만들기
 - Node server실행해서 POSTMAN으로 Register Route에 요청을 보낸다.
-- *(mongoose 더 이상 콜백을 허용하지 않는다)
+- *(model.save()는 더 이상 콜백을 허용하지 않는다)
 
 ## Nodemon 설치
 - node mon -> 소스를 변경할때 그걸 감지해서 자동으로 서버를 재 시작해주는 tool
@@ -46,3 +46,19 @@
 ## 비밀 설정 정보 관리
 - 환경 변수 process.env.NODE_ENV
 - local 환경 (development)& Deploy 배포 후(production)
+
+## Bcrypt로 비밀번호 암호화 하기
+- 비밀번호를 암호화해서 데이터베이스에 저장해야함 -> npm install bcrypt --save
+- 우선 Register Route로 가기
+- 유저 정보들을 (Account, Password)등을 데이터베이스에 저장하기 전 암호화
+- bcrypt사이트 참고
+- salt 생성
+
+## 로그인 기능 만들기
+- login route 만들기
+- DB에서 요청한 email찾기 -> user.findOne()
+- 요펑한 email이 있으면 비밀번호가 같은지 확인 -> bcrypt로 plain password와 암호화된 pw가 같은지 확인
+- 같은면 Token생성 -> JSONWEBTOKEN 라이브러리 다운로드 -> npm install jsonwebtoken --save
+- 토큰을 (쿠키, 로컬스토리지)에 저장한다.  쿠키 -> npm install cookie-parser --save
+- model.findOne()도 콜백함수를 지원하지 않는다.
+- 그럼으로 callback을 쓰지 않고 promise 또는 async/await로 수정해서 사용한다.
