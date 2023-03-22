@@ -122,7 +122,7 @@ userSchema.methods.generateToken = async function (callback) {
 
 userSchema.statics.findByToken = function (token, cb) {
   let user = this;
-
+  // user._id + '' = token
   //토큰을 (복호화) decode 한다
   jwt.verify(token, "secretToken", function (err, decoded) {
     // 유저 아이디를 이용해서 유저를 찾은 다음에
