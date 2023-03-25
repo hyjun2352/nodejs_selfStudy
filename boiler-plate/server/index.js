@@ -118,14 +118,14 @@ app.get("/api/users/logout", auth, (req, res) => {
   //   });
   // });
   User.findOneAndUpdate({ _id: req.user._id }, { token: "" })
-  .then((user) => {
-    return res.status(200).send({
-      success: true,
+    .then((user) => {
+      return res.status(200).send({
+        success: true,
+      });
+    })
+    .catch((err) => {
+      return res.json({ success: false, err });
     });
-  })
-  .catch((err) => {
-    return res.json({ success: false, err });
-  });
 });
 
 app.listen(port, () => {

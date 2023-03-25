@@ -1,3 +1,4 @@
+# Node JS
 ## Node.js 와 express js 다운로드 하기
 - Node.js is an open source, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a brower.
 - Express.js, or simply Express, is a web application framework from Node.js
@@ -77,3 +78,32 @@
 ## 로그아웃 기능 만들기
 - 로그아웃 route 만들기
 - 로그아웃 유저를 데이터베이스에서 찾아서 유저의 토큰을 지워준다.
+
+# React JS
+## About React
+- 자바스크립트 라이브러리이다, Made by Facebook, Released in 2013
+- Components module과 비슷하게 컴포넌트로 이루어져 있어서 reusable이 뛰어나다
+- Virtual DOM
+- Real DOM
+  - 만약 10개 리스트가 있고, 그중에 한가지의 리스트가 변화가 일어날때(update)
+  - 전체 리스트를 다시 Reload해야된다
+  - Super Expensive한 작업
+- Virtual DOM
+  - 만약 10개 리스트가 있고, 그중에 한가지의 리스트가 변화가 일어날때(update)
+  - 그 바뀐 한 가지 아이템만 DOM에서 바꿔주면 된다
+- 둘 properties는 거의 같다
+  - JSX를 렌더링 하면 Virtual DOM이 update된다
+  - Virtual DOM이 이전 Virtual DOM에서 찍어둔 Snapshot과 비교해서 바뀐 부분을 찾는다
+    - 이 과정은 diffing이라 한다
+  - 그 부분만 Real DOM에서 바꾼다
+
+## Create-react-app
+- Babel -> 최신 자바스크립트 문법을 지원하지 않는 브라우저들을 위해 최신 자바스크립트 문법을 구형 브라우저에서도 돌수있게 변환시켜주는것
+- Webpack -> 자바스크립트 모듈 번들러이다, 웹 어플리케이션에 필요한 (HTML, CSS, Javascript, Images)등을 하나의 파일로 혹은 여러개 파일로 병합 및 압축을 해주는 역할을 한다.
+  - (주요한 요소로는 Entry, Output, Loaders, Plugins, Mode, Browser Compatibility가 있다)
+- npx create-react-app .
+
+## npm npx
+- https://ljh86029926.gitbook.io/coding-apple-react/undefined/npm-npx
+
+## 구조 설명
