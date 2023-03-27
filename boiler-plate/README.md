@@ -108,3 +108,8 @@
 
 ## React Router Dom
 - Dependency 다운로드 -> npm install react-router-dom --save
+
+## Data Flow & Axios
+- request를 할때 지금까지 Client 부분이 없었기에 POSTMAN을 이용했다
+- 하지만 이제 있으니깐 React JS부분에서 Request를 보내면 되는데, 그때 사용할게 AXIOS 라이브러리이다
+- npm install axios --save
