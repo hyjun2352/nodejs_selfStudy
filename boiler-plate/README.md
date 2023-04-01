@@ -188,3 +188,6 @@
     - Shorter Code
     - Simpler Code
     - Faster Performance
+
+## 학습 영상
+- https://www.youtube.com/playlist?list=PL9a7QRYt5fqkZC9jc7jntD1WuAogjo_9T
