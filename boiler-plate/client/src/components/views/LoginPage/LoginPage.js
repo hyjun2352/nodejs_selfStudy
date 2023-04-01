@@ -18,7 +18,7 @@ function LoginPage() {
     setPassword(event.currentTarget.value)
   }
 
-  const onsubmitHandler = (event) => {
+  const onSubmitHandler = (event) => {
     // refresh 막아주기
     event.preventDefault();
 
@@ -31,13 +31,13 @@ function LoginPage() {
     }
 
     dispatch(loginUser(body))
-      .then(response => {
-        if (response.payload.loginSuccess) {
-          navigate('/')
-        } else {
-          alert('Error˝')
-        }
-  })
+    .then(response => {
+      if (response.payload.loginSuccess) {
+        navigate('/')
+      } else {
+        alert('Error')
+      }
+    })
 
   }
 
@@ -52,7 +52,7 @@ function LoginPage() {
       }}
     >
       <form style={{ display: "flex", flexDirection: "column" }}
-        onSubmit={onsubmitHandler}
+        onSubmit={onSubmitHandler}
       >
         <label>Email</label>
         <input type="email" value={Email} onChange={onEmailHander} />
