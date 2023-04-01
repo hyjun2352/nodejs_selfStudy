@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-const port = 3000;
 // const bodyParser = require('body-parser');
 const cookieParser = require("cookie-parser");
 const config = require("./config/key");
@@ -28,10 +27,10 @@ app.get("/", (req, res) => {
   res.send("Hello World!~~안녕하세요 ~ ");
 });
 
-// from client 
-app.get('api/hello', (req, res) => {
-  res.send("안녕하세요 ~ ")
-})
+// from client
+app.get("/api/hello", (req, res) => {
+  res.send("안녕하세요 ~ ");
+});
 
 app.post("/api/users/register", async (req, res) => {
   // 회원가입 할때 필요한 정보들을 client에서 가져오면
@@ -65,6 +64,7 @@ app.post("/api/users/login", (req, res) => {
   // promise로 수정한 예
   User.findOne({ email: req.body.email })
     .then((user) => {
+      
       if (!user) {
         return res.json({
           loginSuccess: false,
@@ -132,6 +132,8 @@ app.get("/api/users/logout", auth, (req, res) => {
       return res.json({ success: false, err });
     });
 });
+
+const port = 5000;
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`);

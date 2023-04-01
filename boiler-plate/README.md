@@ -113,3 +113,78 @@
 - request를 할때 지금까지 Client 부분이 없었기에 POSTMAN을 이용했다
 - 하지만 이제 있으니깐 React JS부분에서 Request를 보내면 되는데, 그때 사용할게 AXIOS 라이브러리이다
 - npm install axios --save
+
+## CORS이슈, Proxy 설정
+- Cross-Origin Resource Sharing(CORS)보안을 위해서
+- localhost:3000과 localhost:5000이 소통할때 CORS의 정책에 의해서 control당한다.
+- 해결하는데 여러 방법이 있다.
+- 여기서는 Proxy사용하는 방법으로 해결한다
+- npm install http-proxy-middleware --save
+
+## Proxy Server
+- 1. 아이피를 Proxy Server에서 임의로 바꿔 버릴 수 있다. 그래서 인터넷에서는 접근하는 사람의 IP를 모르게 된다.
+- 2. 보내는 데이터도 임의로 바꿀 수 있다.
+- 유저 <-> Proxy Server <-> 인터넷
+- 1. 방화벽
+- 2. 웹 필터 기능
+- 3. 캐쉬 데이터, 공유 데이터 제공 가능
+- proxy server사용 이유
+- 1. 회사에서 직원들이나 집안에서 아이들 인터넷 사용 제어
+- 2. 캐쉬를 이용해 더 빠른 인터넷 제공
+- 3. 더 나은 보안 제공
+- 4. 이용 제한된 사이트 접근 가능
+
+## Concurrently
+- 여러개의 commands를 동시에 작동 시킬 수 있게 해주는 tool
+- npm install concurrently --save
+- "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
+- "dev": "concurrently \"npm run start:dev\" \"cd ../client && npm run start\""
+
+## Antd CSS Framework
+- CSS Framework 종류 for React JS
+- 1. Material UI
+- 2. React Bootstrap
+- 3. Semantic UI
+- 4. Ant Design
+- 5. Materialize
+- https://ant.design/ -> npm install antd --save
+- 단점: 사이즈가 크다
+- 장점: enterprise 환경에서도 어울리는 디자인을 만들어 낼 수 있다. 쓰기 편하다
+- Material UI -> 조금 어렵다
+
+## Redux 기초
+- Redux is a predictable state container for JavaScript apps. 상태 관리 라이브러리
+- Props vs State
+- Props
+  - 1. shorthand for properties
+  - 2. Props are how components talk to each other
+  - 3. props flow downloads from the parent component
+  - 4. Props are immutable from the child perspective, if you want to change that value? the parent should just change its internal state
+- state
+  - 1. parent components에서 child component로 data를 보내는게 아닌, 그 component안에서 데이터를 전달하려면? State로
+  - 예: 들어서 검색창에 글을 입력할때 글이 변하는 것은 state을 바꿈
+  - 2. state is mutable
+  - 3. state가 변하면 re-render 된다.
+- Redux는 State를 관리하는 것
+- https://eatnug.github.io/frontend/react-redux/
+- Redux 데이터 Flow(strict unidirectional data flow)
+
+## Redux UP
+- 다운받을 Dependency들
+  - redux
+  - react-redux
+  - redux-promise
+  - redux-thunk
+
+## React Hooks
+- React Component
+  - Class Component
+    - Provide more features
+    - Longer Code
+    - More Complex Code
+    - Slower Performance
+  - Functional Component
+    - Provide less features
+    - Shorter Code
+    - Simpler Code
+    - Faster Performance
